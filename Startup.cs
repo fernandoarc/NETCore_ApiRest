@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using NetCore_API.Model.BD;
 
 namespace NetCore_API
@@ -29,6 +30,9 @@ namespace NetCore_API
         {
             services.AddControllers();
             services.AddDbContext<BicicletaContext>(opciones => opciones.UseSqlServer(Configuration.GetConnectionString("BicicletaContext")));
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Api Rest Bicicletas" , Version = "v1"});
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +52,11 @@ namespace NetCore_API
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api Rest Bicicletas V1");
             });
         }
     }
