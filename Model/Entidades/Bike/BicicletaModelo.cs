@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace NetCore_API.Model.Entidades
+namespace NetCore_API.Model.Entidades.Bike
 {
     public class BicicletaModelo
     {
