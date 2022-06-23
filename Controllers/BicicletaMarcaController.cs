@@ -16,6 +16,9 @@ namespace NetCore_API.Controllers
 
         public BicicletaMarcaController(BicicletaContext context) { _context = context; }
 
+        /// <summary>
+        /// Metodo que retorna listado de marcas registradas en sistema
+        /// </summary>
         [HttpGet]
         public async Task<IActionResult> Get()
         {
