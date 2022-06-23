@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace NetCore_API.Model.Entidades.Bike
@@ -12,5 +13,6 @@ namespace NetCore_API.Model.Entidades.Bike
         public BicicletaMarca BicicletaMarca { get; set; }
         public int IdBicicletaCategoria { get; set; }
         public BicicletaCategoria BicicletaCategoria { get; set; }
+        public List<Bicicleta> Bicicleta { get; set; }
     }
 }
