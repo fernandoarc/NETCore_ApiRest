@@ -10,5 +10,7 @@ namespace NetCore_API.Model.Entidades.Bike
         public int Anio { get; set; }
         public int IdBicicletaMarca { get; set; }
         public BicicletaMarca BicicletaMarca { get; set; }
+        public int IdBicicletaCategoria { get; set; }
+        public BicicletaCategoria BicicletaCategoria { get; set; }
     }
 }
