@@ -87,6 +87,7 @@ namespace NetCore_API.Controllers
                 try
                 {
                     bicicletaMarcaSql.Nombre = bicicletaMarca.Nombre;
+                    bicicletaMarcaSql.Vigente = bicicletaMarca.Vigente;
                     _context.Update(bicicletaMarcaSql);
                     await _context.SaveChangesAsync();
                 }
@@ -97,6 +98,27 @@ namespace NetCore_API.Controllers
                 }
             }
             return Ok();
+        }
+
+        [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> Delete([FromBody] int id)
+        {
+            var bicicletaMarcaSql = await _context.BicicletaMarca.FindAsync(id);
+            if (bicicletaMarcaSql != null)
+            {
+                try
+                {
+                    bicicletaMarcaSql.Vigente = false;
+                    _context.Update(bicicletaMarcaSql);
+                    await _context.SaveChangesAsync();
+                }
+                catch (System.Exception e)
+                {
+                    return BadRequest(e.Message);
+                }
+            }
+            return NotFound("Marca no registrada");
         }
     }
 }

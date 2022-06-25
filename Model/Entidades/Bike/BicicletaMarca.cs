@@ -9,6 +9,7 @@ namespace NetCore_API.Model.Entidades.Bike
         [Key]
         public int IdBicicletaMarca { get; set; }
         public string Nombre { get; set; }
+        public bool Vigente { get; set; }
         protected internal List<BicicletaModelo> BicicletaModelo { get; set; }
     }
 }

@@ -36,6 +36,9 @@ namespace NetCore_API.Model.BD
                     .IsRequired()
                     .HasMaxLength(100)
                     .IsUnicode(false);
+                marca.Property(x => x.Vigente)
+                    .IsRequired()
+                    .IsUnicode(false);
             });
             modelBuilder.Entity<BicicletaModelo>(modelo => {
                 modelo.ToTable("BicicletaModelo");
