@@ -10,5 +10,7 @@
   </ItemGroup>
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile>obj\Debug\netcoreapp3.1\NetCore_API.xml</DocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
   </PropertyGroup>
 </Project>

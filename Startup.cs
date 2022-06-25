@@ -61,6 +61,7 @@ namespace NetCore_API
 
             app.UseSwagger();
             app.UseSwaggerUI(c => {
+                c.RoutePrefix = "";
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api Rest Bicicletas V1");
             });
         }
